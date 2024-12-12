@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fb8c00; /* Orange background for a vibrant look */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Task Container */
+.task-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.task-container:hover {
+    transform: translateY(-5px); /* Subtle hover effect on container */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Task Inputs */
+.task-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"], textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Button Styling */
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+button#clearAllBtn {
+    background-color: #f44336;
+}
+
+button#clearAllBtn:hover {
+    background-color: #e53935;
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Task List */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#taskList li:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+#taskList li button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#taskList li button:hover {
+    background-color: #e53935;
+}
+
+/* Checkbox and Label Styling */
+input[type="checkbox"] {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+label {
+    font-size: 1rem;
+    color: #f10a0a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+label:before {
+    content: '\00a0'; /* Adds a space before label text */
+}
+
+input[type="checkbox"]:checked + label {
+    color: #4CAF50; /* Change label color when checked */
+}
+
+/* Clear All Tasks Button */
+.clear-all-tasks-btn {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #ff9800;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.clear-all-tasks-btn:hover {
+    background-color: #fb8c00;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .task-inputs input[type="text"],
+    .task-inputs textarea {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    #taskList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #taskList li button {
+        margin-top: 0.5rem;
+    }
+
+    .clear-all-tasks-btn {
+        font-size: 1rem;
+    }
+}
